@@ -41,7 +41,7 @@ body{
 .home-brand{
     font-weight: 500;
     color: var(--primary-color);
-    font-size: 50px;
+    font-size: 3.125rem;
 }
 .br-name{
     color: var(--primary-color);
