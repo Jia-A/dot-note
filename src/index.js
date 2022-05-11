@@ -3,13 +3,23 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
+import { NoteProvider } from "./Context/note-context";
+import { AuthProvider } from "./Context/authorization-context";
+import { BrowserRouter } from "react-router-dom";
+
 
 // Call make Server
 makeServer();
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <AuthProvider>
+        <NoteProvider>
+          <App />
+        </NoteProvider>
+      </AuthProvider>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );
