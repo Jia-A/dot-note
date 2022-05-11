@@ -1,53 +1,64 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,900;1,300&display=swap');
-body{
-    font-family: 'Montserrat', sans-serif;
 
+body {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
 }
-.body-div{
+
+.body-div {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 
 }
-.content-side{
+
+.content-side {
     display: flex;
     flex-direction: column;
-    width :50%;
+    width: 50%;
     justify-content: space-around;
 }
-.image-side{
+
+.image-side {
     width: 50%;
 }
-.btn-div{
+
+.btn-div {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 1rem;
 }
-.primary-btn{
-    padding:12px;
+
+.primary-btn {
+    padding: 12px;
     cursor: pointer;
 }
-.read-btn{
+
+.read-btn {
     background-color: transparent;
     cursor: pointer;
 }
-.read-btn:hover{
+
+.read-btn:hover {
     background-color: transparent;
     text-decoration: 1px solid var(--primary-color) underline;
 }
-.home-brand{
+
+.home-brand {
     font-weight: 500;
     color: var(--primary-color);
-    font-size: 50px;
+    font-size: 3.125rem;
 }
-.br-name{
+
+.br-name {
     color: var(--primary-color);
     text-decoration: 1px solid var(--secondary-color) underline;
 }
-.home-para{
+
+.home-para {
     font-style: italic;
     font-weight: 600;
     font-size: larger;
