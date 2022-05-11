@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,900;1,300&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.form-main {
+    display: flex;
+    margin-top: 1.875rem;
+    margin-bottom: 1.875rem;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.form-container {
+    box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.1);
+    align-self: center;
+    display: flex;
+    text-align: center;
+    padding: 1.25rem;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.form-head {
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.submit-btn {
+    width: 85%;
+}
+
+.new-ac {
+    text-decoration: underline;
+}
+
+.label-inp {
+    margin-bottom: 1px;
+}
+
+.pass-rem {
+    display: flex;
+    justify-content: space-between;
+}
+
+.h4 {
+    font-weight: 300;
+}
+
+.align-justify-center {
+    align-items: center;
+    justify-content: center;
+}
+
+.margin-30 {
+    margin-top: 1.875rem;
+    margin-bottom: 1.875rem;
+}
+
+.primary-btn,
+.primary-btn-border,
+.secondary-btn-border {
+    padding: 5px;
+}
+
+.button {
+    background-color: transparent;
+}
+
+.link-style {
+    text-decoration: none;
+}
+
+.link-color {
+    color: var(--whitesmoke-color);
+}
+
+.link-color-primary {
+    color: var(--primary-color);
+}
