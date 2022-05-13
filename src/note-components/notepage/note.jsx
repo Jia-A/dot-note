@@ -29,7 +29,6 @@ navigate("/login")
 };
 
 const moveToArchive = async (item) =>{
-    console.log("note archived");
     try{
     const response = await axios({
     method : "post",
@@ -39,7 +38,6 @@ const moveToArchive = async (item) =>{
     });
     console.log("try passed");
     if(response.status === 200 || response.status === 201){
-    console.log("megha is a bigger dimwit...");
     noteDispatch({type : "MOVE_TO_ARCHIVE", payload : { note : response.data.notes, archive : response.data.archives}})
     }
     }
@@ -60,7 +58,6 @@ headers:{authorization: token},
 });
 console.log(response)
 if(response.status === 200 || response.status === 201){
-console.log("got positive response");
 noteDispatch({type : "DELETE_NOTE", payload : {note : response.data.notes, trash : item}})
 }
 }

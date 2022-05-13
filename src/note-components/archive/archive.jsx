@@ -21,7 +21,6 @@ try{
     });
     console.log(response)
     if(response.status === 200 || response.status === 201){
-        console.log("restore successful");
         noteDispatch({type : "RESTORE_ARCHIVED_NOTE", payload : { archive : response.data.archives, note : response.data.notes}})
     }
 }
@@ -40,7 +39,6 @@ headers:{authorization: token},
 });
 console.log(response)
 if(response.status === 200 || response.status === 201){
-console.log("move to trash successful");
 noteDispatch({type : "DELETE_NOTE_FROM_ARCHIVE", payload : {archive : response.data.archives, trash : item}})
 }
 }
