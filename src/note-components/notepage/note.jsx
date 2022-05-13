@@ -9,7 +9,6 @@ import { noteCreate } from "../../note-API/note-create";
 import { useNavigate } from "react-router-dom";
 
 
-
 const Note = () =>{
 const { noteState, noteDispatch } = useNote();
 const { authState } = useAuth();

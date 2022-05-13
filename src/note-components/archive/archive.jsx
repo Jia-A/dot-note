@@ -11,6 +11,25 @@ const { archive } = noteState;
 const { authState } = useAuth();
 const { token } = authState;
 
+const restoreNoteFromArchive = async (item) =>{
+console.log(item._id)
+try{
+    const response = await axios({
+        method:"post",
+        url:`/api/archives/restore/${item._id}`,
+        headers:{authorization:token}, 
+    });
+    console.log(response)
+    if(response.status === 200 || response.status === 201){
+        console.log("restore successful");
+        noteDispatch({type : "RESTORE_ARCHIVED_NOTE", payload : { archive : response.data.archives, note : response.data.notes}})
+    }
+}
+catch(error){
+    console.log(error);
+}
+}
+
 const moveToTrashFromArchive = async (item) => {
 console.log(item._id);
 try{
@@ -21,7 +40,7 @@ headers:{authorization: token},
 });
 console.log(response)
 if(response.status === 200 || response.status === 201){
-console.log("got positive response");
+console.log("move to trash successful");
 noteDispatch({type : "DELETE_NOTE_FROM_ARCHIVE", payload : {archive : response.data.archives, trash : item}})
 }
 }
@@ -29,6 +48,7 @@ catch (error){
 console.log(error);
 }
 }
+
 return (
 <div className="App">
     <Navbar />
@@ -46,7 +66,7 @@ return (
 
                 <div className="note-foot">
                     <div className="foot-icons">
-                        <span><i class="fad fa-inbox-out note-list-icon"></i></span>
+                        <span onClick={()=>restoreNoteFromArchive(item)}><i class="fad fa-inbox-out note-list-icon"></i></span>
                         <span onClick={()=>moveToTrashFromArchive(item)}><i class="fad fa-trash note-list-icon"></i></span>
                     </div>
                 </div>
