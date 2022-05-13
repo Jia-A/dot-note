@@ -158,6 +158,14 @@ span {
     margin-left: auto;
 }
 
+.page-head{
+    color: #082546;
+    font-style: italic;
+    font-weight: 700;
+    margin-top: 0px;
+    text-decoration: underline 1px var(--secondary-color);
+}
+
 
 
 

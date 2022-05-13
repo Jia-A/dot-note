@@ -12,11 +12,11 @@ const Trash = () =>{
             <div className="main-container">
                 <Sidebar/>
                 <div className="right-cont">
+                <h2 className="page-head">Trash Notes</h2>
                     {trash.map((item) => (
                     <div className="note-list">
                         <div className="note-head">
                             <h2 className="note-list-title">{item.title}</h2>
-                            <span className="pin"><i class="fad fa-thumbtack"></i></span>
                         </div>
 
                         <p className="note-list-content">{item.mainContent}</p>
