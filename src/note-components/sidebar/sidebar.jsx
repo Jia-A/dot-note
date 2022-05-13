@@ -5,7 +5,8 @@ const Sidebar = () =>{
 return(
 <div className="left-nav">
     <ul className="left-list">
-        <li className="left-item"><span><i class="fal fa-home"></i></span> Home</li>
+        <Link to="/notes" className="link-style link-color-primary">
+        <li className="left-item"><span><i class="fal fa-home"></i></span> Home</li></Link>
         <li className="left-item"><span><i class="fal fa-tag"></i> </span> Lable</li>
         <Link to="/archive" className="link-style link-color-primary">
         <li className="left-item"><span><i class="fal fa-archive"></i></span> Archive</li>

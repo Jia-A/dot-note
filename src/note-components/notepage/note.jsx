@@ -9,7 +9,6 @@ import { noteCreate } from "../../note-API/note-create";
 import { useNavigate } from "react-router-dom";
 
 
-
 const Note = () =>{
 const { noteState, noteDispatch } = useNote();
 const { authState } = useAuth();
@@ -29,6 +28,26 @@ navigate("/login")
 }
 };
 
+const moveToArchive = async (item) =>{
+    try{
+    const response = await axios({
+    method : "post",
+    data : { note : item },
+    url : `api/notes/archives/${item._id}`,
+    headers : {authorization : token},
+    });
+    console.log("try passed");
+    if(response.status === 200 || response.status === 201){
+    noteDispatch({type : "MOVE_TO_ARCHIVE", payload : { note : response.data.notes, archive : response.data.archives}})
+    }
+    }
+    catch (error){
+    console.log(error);
+    }
+    console.log("Done");
+}
+
+
 const moveToTrash = async (item) => {
 console.log(item._id);
 try{
@@ -39,11 +58,9 @@ headers:{authorization: token},
 });
 console.log(response)
 if(response.status === 200 || response.status === 201){
-console.log("got positive response");
 noteDispatch({type : "DELETE_NOTE", payload : {note : response.data.notes, trash : item}})
 }
 }
-
 catch (error){
 console.log(error);
 }
@@ -74,7 +91,6 @@ return(
                                 class="fal fa-plus"></i></button>
                         <button className="button read-btn"><i class="fal fa-palette"></i></button>
                         <button className="button read-btn"><i class="fal fa-tag"></i></button>
-                        <button className="button read-btn"><i class="fal fa-archive"></i></button>
                     </div>
                 </div>
             </div>
@@ -89,8 +105,9 @@ return(
 
                 <div className="note-foot">
                     <div className="foot-icons">
-                        <span onClick={()=>moveToArchive(item)}><i class="fad fa-archive note-list-icon"></i></span>
+                        <span onClick={()=>moveToArchive(item)}><i class="fad fa-inbox-in note-list-icon"></i></span>
                         <span onClick={()=>moveToTrash(item)}><i class="fad fa-trash note-list-icon"></i></span>
+                        <span><i class="fad fa-edit note-list-icon"></i></span>
                     </div>
                 </div>
             </div>
@@ -102,4 +119,4 @@ return(
 );
 
 }
-export {Note};
+export { Note };
