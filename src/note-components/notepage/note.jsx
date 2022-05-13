@@ -65,7 +65,6 @@ console.log("got positive response");
 noteDispatch({type : "DELETE_NOTE", payload : {note : response.data.notes, trash : item}})
 }
 }
-
 catch (error){
 console.log(error);
 }
@@ -124,4 +123,4 @@ return(
 );
 
 }
-export {Note};
+export { Note };
