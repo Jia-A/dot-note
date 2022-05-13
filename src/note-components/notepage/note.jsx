@@ -29,6 +29,28 @@ navigate("/login")
 }
 };
 
+const moveToArchive = async (item) =>{
+    console.log("note archived");
+    try{
+    const response = await axios({
+    method : "post",
+    data : { note : item },
+    url : `api/notes/archives/${item._id}`,
+    headers : {authorization : token},
+    });
+    console.log("try passed");
+    if(response.status === 200 || response.status === 201){
+    console.log("megha is a bigger dimwit...");
+    noteDispatch({type : "MOVE_TO_ARCHIVE", payload : { note : response.data.notes, archive : response.data.archives}})
+    }
+    }
+    catch (error){
+    console.log(error);
+    }
+    console.log("Done");
+}
+
+
 const moveToTrash = async (item) => {
 console.log(item._id);
 try{

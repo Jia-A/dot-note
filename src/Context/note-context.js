@@ -24,6 +24,12 @@ const noteReducer = (noteState, {
             ...payload.trash
           }],
       }
+      case "MOVE_TO_ARCHIVE":
+        return {
+          ...noteState,
+          note: payload.note,
+            archive: payload.archive,
+        }
         default:
           return noteState;
   }
