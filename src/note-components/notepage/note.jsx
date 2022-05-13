@@ -95,7 +95,6 @@ return(
                                 class="fal fa-plus"></i></button>
                         <button className="button read-btn"><i class="fal fa-palette"></i></button>
                         <button className="button read-btn"><i class="fal fa-tag"></i></button>
-                        <button className="button read-btn"><i class="fal fa-archive"></i></button>
                     </div>
                 </div>
             </div>
@@ -110,8 +109,9 @@ return(
 
                 <div className="note-foot">
                     <div className="foot-icons">
-                        <span onClick={()=>moveToArchive(item)}><i class="fad fa-archive note-list-icon"></i></span>
+                        <span onClick={()=>moveToArchive(item)}><i class="fad fa-inbox-in note-list-icon"></i></span>
                         <span onClick={()=>moveToTrash(item)}><i class="fad fa-trash note-list-icon"></i></span>
+                        <span><i class="fad fa-edit note-list-icon"></i></span>
                     </div>
                 </div>
             </div>

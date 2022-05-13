@@ -46,7 +46,7 @@ return (
 
                 <div className="note-foot">
                     <div className="foot-icons">
-                        <span><i class="fad fa-archive note-list-icon"></i></span>
+                        <span><i class="fad fa-inbox-out note-list-icon"></i></span>
                         <span onClick={()=>moveToTrashFromArchive(item)}><i class="fad fa-trash note-list-icon"></i></span>
                     </div>
                 </div>

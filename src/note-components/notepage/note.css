@@ -137,6 +137,7 @@ span {
 
 .fad{
     cursor: pointer;
+    color : var(--whitesmoke-color);
 }
 /* Common CSS */
 
