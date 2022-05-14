@@ -166,6 +166,19 @@ span {
     text-decoration: underline 1px var(--secondary-color);
 }
 
+/* input[type="color"] {
+	opacity: 5;
+	display: block;
+    width: 20px;
+    height: 20px;
+	border: none;
+    border-radius: 100%;
+    background: none;
+} */
+
+#x{
+    width: 40%;
+}
 
 
 

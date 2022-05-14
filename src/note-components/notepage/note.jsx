@@ -2,7 +2,6 @@ import "./note.css";
 import axios from "axios";
 import { Navbar } from "../navbar/navbar";
 import { Sidebar } from "../sidebar/sidebar";
-import { useState } from "react";
 import { useNote } from "../../Context/note-context";
 import { useAuth } from "../../Context/authorization-context";
 import { noteCreate } from "../../note-API/note-create";
@@ -10,23 +9,25 @@ import { useNavigate } from "react-router-dom";
 
 
 const Note = () =>{
-const { noteState, noteDispatch } = useNote();
+const { noteState, noteDispatch, notes, setNote } = useNote();
 const { authState } = useAuth();
 const navigate = useNavigate();
 const { token } = authState;
 const { note } = noteState;
-const [notes, setNote] = useState({ title: "", mainContent: "" });
 
 
 const noteCreateFuntion = async (e) => {
 e.preventDefault();
 if (token) {
 noteCreate(notes, token, noteDispatch);
-setNote({ title: "", mainContent: "" });
+console.log(notes.backColor)
+setNote({ title: "", mainContent: "", backColor : ""});
+
 } else {
 navigate("/login")
 }
 };
+
 
 const moveToArchive = async (item) =>{
     try{
@@ -73,7 +74,7 @@ return(
     <div className="main-container">
         <Sidebar />
         <div className="right-cont">
-            <div className="note-container">
+            <div className="note-container" style={{backgroundColor : notes.backColor}}>
                 <div className="note-head">
                     <input type="text" className="note-title" placeholder="Title" value={notes.title} onChange={(e)=>
                     setNote(() => ({
@@ -89,13 +90,13 @@ return(
                     <div className="foot-icons">
                         <button className="button read-btn" onClick={noteCreateFuntion}><i
                                 class="fal fa-plus"></i></button>
-                        <button className="button read-btn"><i class="fal fa-palette"></i></button>
+                        <input type="color" id="x" value={notes.backColor} onChange={(e)=> setNote(() => ({...notes, backColor : e.target.value}))} />
                         <button className="button read-btn"><i class="fal fa-tag"></i></button>
                     </div>
                 </div>
             </div>
             {note.map((item)=> (
-            <div className="note-list">
+            <div className="note-list" style={{backgroundColor : item.backColor}}>
                 <div className="note-head">
                     <h2 className="note-list-title">{item.title}</h2>
                     <span className="pin"><i class="fad fa-thumbtack"></i></span>
@@ -107,7 +108,6 @@ return(
                     <div className="foot-icons">
                         <span onClick={()=>moveToArchive(item)}><i class="fad fa-inbox-in note-list-icon"></i></span>
                         <span onClick={()=>moveToTrash(item)}><i class="fad fa-trash note-list-icon"></i></span>
-                        <span><i class="fad fa-edit note-list-icon"></i></span>
                     </div>
                 </div>
             </div>

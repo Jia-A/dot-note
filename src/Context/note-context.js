@@ -1,7 +1,8 @@
 import {
   createContext,
   useContext,
-  useReducer
+  useReducer, 
+  useState
 } from "react";
 
 const NoteContext = createContext();
@@ -57,11 +58,15 @@ const NoteProvider = ({
     trash: [],
     archive: []
   });
+  const [notes, setNote] = useState({ title: "", mainContent: "", backColor : ""});
+
 
   return ( <NoteContext.Provider value = {
       {
         noteState,
-        noteDispatch
+        noteDispatch,
+        notes,
+        setNote
       }
     } > {
       children
