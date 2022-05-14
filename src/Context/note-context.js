@@ -56,9 +56,11 @@ const NoteProvider = ({
   const [noteState, noteDispatch] = useReducer(noteReducer, {
     note: [],
     trash: [],
-    archive: []
+    archive: [],
+    tags : [],
   });
-  const [notes, setNote] = useState({ title: "", mainContent: "", backColor : ""});
+  const [notes, setNote] = useState({ title: "", mainContent: "", backColor : "", tagName : ""});
+  const [ tag, setTag ] = useState(["Work", "Office", "Home", "Exercise", "Study", "Fun"]);
 
 
   return ( <NoteContext.Provider value = {
@@ -66,7 +68,9 @@ const NoteProvider = ({
         noteState,
         noteDispatch,
         notes,
-        setNote
+        setNote, 
+        tag,
+        setTag
       }
     } > {
       children

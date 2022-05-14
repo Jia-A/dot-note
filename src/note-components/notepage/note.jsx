@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 
 
 const Note = () =>{
-const { noteState, noteDispatch, notes, setNote } = useNote();
+const { noteState, noteDispatch, notes, setNote, tag, setTag } = useNote();
 const { authState } = useAuth();
 const navigate = useNavigate();
 const { token } = authState;
@@ -87,6 +87,11 @@ return(
                     onChange={(e)=> setNote(() => ({ ...notes, mainContent : e.target.value}))}></textarea>
 
                 <div className="note-foot">
+                    <select name="tags" id=""
+                    onClick={(e)=>setNote(()=>({...notes, tagName : e.target.value}))}>
+                        {tag.map((item)=> (
+                        <option value={item}>{item}</option>))}
+                    </select>
                     <div className="foot-icons">
                         <button className="button read-btn" onClick={noteCreateFuntion}><i
                                 class="fal fa-plus"></i></button>
@@ -103,6 +108,7 @@ return(
                 </div>
 
                 <p className="note-list-content">{item.mainContent}</p>
+                <span>{item.tagName}</span>
 
                 <div className="note-foot">
                     <div className="foot-icons">
