@@ -7,6 +7,7 @@ import { Note } from "./note-components/notepage/note";
 import { Trash } from "./note-components/trash/trash";
 import { Route, Routes } from "react-router-dom";
 import { Signup } from "./note-components/authentication/signup";
+import { Label } from "./note-components/label/label";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
       <Route path = "/signup" element = { <Signup/> } />
       <Route path = "/trash" element = { <Trash/> } />
       <Route path = "/archive" element = { <Archive/> } />
+      <Route path = "/label" element = { <Label/> } />
       </Routes>
     </div>
   );

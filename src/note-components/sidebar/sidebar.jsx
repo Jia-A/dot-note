@@ -7,7 +7,8 @@ return(
     <ul className="left-list">
         <Link to="/notes" className="link-style link-color-primary">
         <li className="left-item"><span><i class="fal fa-home"></i></span> Home</li></Link>
-        <li className="left-item"><span><i class="fal fa-tag"></i> </span> Lable</li>
+        <Link to="/label" className="link-style link-color-primary">
+        <li className="left-item"><span><i class="fal fa-tag"></i> </span> Lable</li></Link>
         <Link to="/archive" className="link-style link-color-primary">
         <li className="left-item"><span><i class="fal fa-archive"></i></span> Archive</li>
         </Link>
