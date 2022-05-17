@@ -5,12 +5,12 @@
     display: flex;
     /* flex-direction: column; */
     background-color: aquamarine;
-    width: 200px;
-    height: 200px;
+    width: 12.5rem;
+    height: 12.5rem;
 }
 .chip{
-    width: 100px;
-    height: 40px;
+    width: 6.25rem;
+    height: 2.5rem;
 }
 .main-chip-cont{
     display: flex;
@@ -22,7 +22,7 @@
     cursor: pointer; 
 }
 .marginned{
-    margin: 15px;
+    margin: 0.9375rem;
     padding: 0px 0px 5px 15px;
     background-color: rgb(231, 216, 231);
     border-radius: 5px;
@@ -61,7 +61,7 @@ h5{
     margin: 5px;
     background-color: thistle;
     border: none;
-    border-radius: 20px;
+    border-radius: 1.25rem;
 }
 .new-item:hover{
     border-bottom: 2px solid rgb(145, 60, 145);
