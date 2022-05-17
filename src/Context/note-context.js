@@ -44,6 +44,11 @@ const noteReducer = (noteState, {
           archive : payload.archive,
           note : payload.note,
         }
+      case "DELETE_FROM_TRASH" : 
+        return {
+          ...noteState,
+          trash : noteState.trash.filter((item)=>item._id !== payload)
+        }
         default:
           return noteState;
   }
