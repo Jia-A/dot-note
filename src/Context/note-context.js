@@ -1,7 +1,7 @@
 import {
   createContext,
   useContext,
-  useReducer, 
+  useReducer,
   useState
 } from "react";
 
@@ -31,22 +31,22 @@ const noteReducer = (noteState, {
           note: payload.note,
             archive: payload.archive,
         }
-      case "DELETE_NOTE_FROM_ARCHIVE" : 
-      return {
-        ...noteState,
-        archive : payload.archive,
-        trash : [...noteState.trash, {
-          ...payload.trash
-        }],
-      }
-      case "RESTORE_ARCHIVED_NOTE" :
-        return {
-          ...noteState,
-          archive : payload.archive,
-          note : payload.note,
-        }
-        default:
-          return noteState;
+        case "DELETE_NOTE_FROM_ARCHIVE":
+          return {
+            ...noteState,
+            archive: payload.archive,
+              trash: [...noteState.trash, {
+                ...payload.trash
+              }],
+          }
+          case "RESTORE_ARCHIVED_NOTE":
+            return {
+              ...noteState,
+              archive: payload.archive,
+                note: payload.note,
+            }
+            default:
+              return noteState;
   }
 };
 
@@ -57,25 +57,32 @@ const NoteProvider = ({
     note: [],
     trash: [],
     archive: [],
-    tags : [],
+    tags: [],
+    priority: ["Critical", "Major", "Moderate", "Low"],
+    // filterTagPriority : {Critical : false, Major : false, Moderate : false, Low : false},
   });
-  const [notes, setNote] = useState({ title: "", mainContent: "", backColor : "", tagName : ""});
-  const [ tag, setTag ] = useState(["Work", "Office", "Home", "Exercise", "Study", "Fun"]);
+  const [notes, setNote] = useState({
+    title: "",
+    mainContent: "",
+    backColor: "",
+    tagName: "",
+    priorityLevel: ""
+  });
+  const [tag, setTag] = useState(["Work", "Office", "Home", "Exercise", "Study", "Fun"]);
 
 
   return ( <NoteContext.Provider value = {
-      {
-        noteState,
-        noteDispatch,
-        notes,
-        setNote, 
-        tag,
-        setTag
-      }
-    } > {
-      children
-    } </NoteContext.Provider>
-  );
+    {
+      noteState,
+      noteDispatch,
+      notes,
+      setNote,
+      tag,
+      setTag
+    }
+  } > {
+    children
+  } </NoteContext.Provider>);
 };
 
 const useNote = () => useContext(NoteContext);

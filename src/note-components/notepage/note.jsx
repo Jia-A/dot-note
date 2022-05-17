@@ -6,14 +6,18 @@ import { useNote } from "../../Context/note-context";
 import { useAuth } from "../../Context/authorization-context";
 import { noteCreate } from "../../note-API/note-create";
 import { useNavigate } from "react-router-dom";
+import { Filter } from "../filter/filter";
+import { useFilter } from "../../Context/filter-context";
+
 
 
 const Note = () =>{
-const { noteState, noteDispatch, notes, setNote, tag, setTag } = useNote();
+const { noteState, noteDispatch, notes, setNote, tag } = useNote();
 const { authState } = useAuth();
 const navigate = useNavigate();
 const { token } = authState;
-const { note } = noteState;
+const { note, priority } = noteState;
+const { filterState, filteredNotes } = useFilter();
 
 
 const noteCreateFuntion = async (e) => {
@@ -21,7 +25,7 @@ e.preventDefault();
 if (token) {
 noteCreate(notes, token, noteDispatch);
 console.log(notes.backColor)
-setNote({ title: "", mainContent: "", backColor : ""});
+setNote({ title: "", mainContent: "", backColor : "", tagName:"", priorityLevel : ""});
 
 } else {
 navigate("/login")
@@ -30,22 +34,22 @@ navigate("/login")
 
 
 const moveToArchive = async (item) =>{
-    try{
-    const response = await axios({
-    method : "post",
-    data : { note : item },
-    url : `api/notes/archives/${item._id}`,
-    headers : {authorization : token},
-    });
-    console.log("try passed");
-    if(response.status === 200 || response.status === 201){
-    noteDispatch({type : "MOVE_TO_ARCHIVE", payload : { note : response.data.notes, archive : response.data.archives}})
-    }
-    }
-    catch (error){
-    console.log(error);
-    }
-    console.log("Done");
+try{
+const response = await axios({
+method : "post",
+data : { note : item },
+url : `api/notes/archives/${item._id}`,
+headers : {authorization : token},
+});
+console.log("try passed");
+if(response.status === 200 || response.status === 201){
+noteDispatch({type : "MOVE_TO_ARCHIVE", payload : { note : response.data.notes, archive : response.data.archives}})
+}
+}
+catch (error){
+console.log(error);
+}
+console.log("Done");
 }
 
 
@@ -68,12 +72,15 @@ console.log(error);
 }
 
 
+
+
 return(
 <div className="App">
     <Navbar />
     <div className="main-container">
         <Sidebar />
         <div className="right-cont">
+            <Filter />
             <div className="note-container" style={{backgroundColor : notes.backColor}}>
                 <div className="note-head">
                     <input type="text" className="note-title" placeholder="Title" value={notes.title} onChange={(e)=>
@@ -87,20 +94,27 @@ return(
                     onChange={(e)=> setNote(() => ({ ...notes, mainContent : e.target.value}))}></textarea>
 
                 <div className="note-foot">
-                    <select name="tags" id=""
-                    onClick={(e)=>setNote(()=>({...notes, tagName : e.target.value}))}>
+                    <select name="tags" id="" onClick={(e)=>setNote(()=>({...notes, tagName : e.target.value}))}>
+                        <option selected disabled>Tags</option>
                         {tag.map((item)=> (
+                        <option value={item}>{item}</option>))}
+                    </select>
+                    <select name="priority" id="" onClick={(e)=>setNote(()=>({...notes, priorityLevel :
+                        e.target.value}))}>
+                        <option selected disabled>Priority</option>
+                        {priority.map((item)=> (
                         <option value={item}>{item}</option>))}
                     </select>
                     <div className="foot-icons">
                         <button className="button read-btn" onClick={noteCreateFuntion}><i
                                 class="fal fa-plus"></i></button>
-                        <input type="color" id="x" value={notes.backColor} onChange={(e)=> setNote(() => ({...notes, backColor : e.target.value}))} />
+                        <input type="color" id="x" value={notes.backColor} onChange={(e)=> setNote(() => ({...notes,
+                        backColor : e.target.value}))} />
                         <button className="button read-btn"><i class="fal fa-tag"></i></button>
                     </div>
                 </div>
             </div>
-            {note.map((item)=> (
+            {filteredNotes(note, filterState).map((item)=> (
             <div className="note-list" style={{backgroundColor : item.backColor}}>
                 <div className="note-head">
                     <h2 className="note-list-title">{item.title}</h2>
@@ -109,6 +123,7 @@ return(
 
                 <p className="note-list-content">{item.mainContent}</p>
                 <span>{item.tagName}</span>
+                <span>{item.priorityLevel}</span>
 
                 <div className="note-foot">
                     <div className="foot-icons">
