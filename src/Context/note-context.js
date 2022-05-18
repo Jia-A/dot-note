@@ -31,22 +31,29 @@ const noteReducer = (noteState, {
           note: payload.note,
             archive: payload.archive,
         }
-        case "DELETE_NOTE_FROM_ARCHIVE":
-          return {
-            ...noteState,
-            archive: payload.archive,
-              trash: [...noteState.trash, {
-                ...payload.trash
-              }],
-          }
-          case "RESTORE_ARCHIVED_NOTE":
-            return {
-              ...noteState,
-              archive: payload.archive,
-                note: payload.note,
-            }
-            default:
-              return noteState;
+
+
+      case "DELETE_NOTE_FROM_ARCHIVE" : 
+      return {
+        ...noteState,
+        archive : payload.archive,
+        trash : [...noteState.trash, {
+          ...payload.trash
+        }],
+      }
+      case "RESTORE_ARCHIVED_NOTE" :
+        return {
+          ...noteState,
+          archive : payload.archive,
+          note : payload.note,
+        }
+      case "DELETE_FROM_TRASH" : 
+        return {
+          ...noteState,
+          trash : noteState.trash.filter((item)=>item._id !== payload)
+        }
+        default:
+          return noteState;
   }
 };
 
