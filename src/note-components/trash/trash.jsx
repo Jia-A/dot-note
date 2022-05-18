@@ -24,7 +24,7 @@ const Trash = () =>{
                         <div className="note-foot">
                             <div className="foot-icons">
                                 <span><i class="fad fa-inbox-in note-list-icon"></i></span>
-                                <span><i class="fad fa-trash note-list-icon"></i></span>
+                                <span onClick={(e)=>noteDispatch({type : "DELETE_FROM_TRASH", payload : item._id})}><i class="fad fa-trash note-list-icon"></i></span>
                             </div>
                         </div>
                     </div>
