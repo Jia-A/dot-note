@@ -1,7 +1,8 @@
 import {
   createContext,
   useContext,
-  useReducer
+  useReducer,
+  useState
 } from "react";
 
 const NoteContext = createContext();
@@ -30,6 +31,8 @@ const noteReducer = (noteState, {
           note: payload.note,
             archive: payload.archive,
         }
+
+
       case "DELETE_NOTE_FROM_ARCHIVE" : 
       return {
         ...noteState,
@@ -60,18 +63,33 @@ const NoteProvider = ({
   const [noteState, noteDispatch] = useReducer(noteReducer, {
     note: [],
     trash: [],
-    archive: []
+    archive: [],
+    tags: [],
+    priority: ["Critical", "Major", "Moderate", "Low"],
+    // filterTagPriority : {Critical : false, Major : false, Moderate : false, Low : false},
   });
+  const [notes, setNote] = useState({
+    title: "",
+    mainContent: "",
+    backColor: "",
+    tagName: "",
+    priorityLevel: ""
+  });
+  const [tag, setTag] = useState(["Work", "Office", "Home", "Exercise", "Study", "Fun"]);
+
 
   return ( <NoteContext.Provider value = {
-      {
-        noteState,
-        noteDispatch
-      }
-    } > {
-      children
-    } </NoteContext.Provider>
-  );
+    {
+      noteState,
+      noteDispatch,
+      notes,
+      setNote,
+      tag,
+      setTag
+    }
+  } > {
+    children
+  } </NoteContext.Provider>);
 };
 
 const useNote = () => useContext(NoteContext);
