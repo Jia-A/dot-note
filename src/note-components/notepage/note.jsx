@@ -25,13 +25,17 @@ e.preventDefault();
 if (token) {
 noteCreate(notes, token, noteDispatch);
 console.log(notes.backColor)
-setNote({ title: "", mainContent: "", backColor : "", tagName:"", priorityLevel : ""});
+setNote({ title: "", mainContent: "", backColor : "", tagName:"", priorityLevel : "", currentDate : ""});
 
 } else {
 navigate("/login")
 }
 };
 
+// const dateAndTime = () =>{
+//     const date = new Date().toLocaleString();
+//     return date;
+// }
 
 const moveToArchive = async (item) =>{
 try{
@@ -91,7 +95,7 @@ return(
 
                 <textarea name="" className="note-text" cols="30" rows="10" placeholder="Write your note here..."
                     value={notes.mainContent}
-                    onChange={(e)=> setNote(() => ({ ...notes, mainContent : e.target.value}))}></textarea>
+                    onChange={(e)=> setNote(() => ({ ...notes, mainContent : e.target.value, currentDate : new Date().toLocaleString()}))}></textarea>
 
                 <div className="note-foot">
                     <select name="tags" id="" onClick={(e)=>setNote(()=>({...notes, tagName : e.target.value}))}>
@@ -109,7 +113,7 @@ return(
                         <button className="button read-btn" onClick={noteCreateFuntion}><i
                                 class="fal fa-plus"></i></button>
                         <input type="color" id="x" value={notes.backColor} onChange={(e)=> setNote(() => ({...notes,
-                        backColor : e.target.value}))} />
+                        backColor : e.target.value }))} />
                         <button className="button read-btn"><i class="fal fa-tag"></i></button>
                     </div>
                 </div>
@@ -124,6 +128,7 @@ return(
                 <p className="note-list-content">{item.mainContent}</p>
                 <span>{item.tagName}</span>
                 <span>{item.priorityLevel}</span>
+                <span>{item.currentDate}</span>
 
                 <div className="note-foot">
                     <div className="foot-icons">
