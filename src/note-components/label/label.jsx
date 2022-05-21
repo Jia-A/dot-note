@@ -23,7 +23,7 @@ setTag(tag.filter((_, index)=>index!==deletingTag));
 }
 return (
 <div className="App">
-    <Navbar />
+    {/* <Navbar /> */}
     <div className="main-container">
         <Sidebar />
         <div className="right-cont">
@@ -32,12 +32,12 @@ return (
                     <h5>Labels on Notes</h5>
                     <ul className="margin">
                         { tag.map((item, index)=>(
-                        <li class="list-item input">{item}<span class="icon-cross"
-                                onClick={()=>deleteCreatedTag(index)}><i class="fal fa-times-circle"></i></span></li>
+                        <li class="list-item">{item}<span class="icon-cross"
+                                onClick={()=>deleteCreatedTag(index)}><i class="fal fa-times-circle chip-icon"></i></span></li>
                         ))}
-                        <li class="new-item input user-input"><input type="text" className="input-fruit"
+                        <li class="new-item user-input"><input type="text" className="input-fruit"
                                 placeholder="New Favourite..." onChange={(e)=>newTag=e.target.value}/><span
-                                onClick={tagCreationFunction}><i className="fal fa-plus"></i></span></li>
+                                onClick={tagCreationFunction}><i className="fal fa-plus chip-icon"></i></span></li>
                     </ul>
                 </div>
             </div>

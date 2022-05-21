@@ -1,7 +1,9 @@
 import "./homepage.css";
 import { Link } from "react-router-dom";
+import { useTheme } from "../../Context/theme-context";
 
 const Homepage = () =>{
+    const { theme } = useTheme();
 return(
 <div className="App">
 
@@ -17,13 +19,16 @@ return(
                     <button className="btn primary-btn">Join Now</button>
                     </Link>
                     <Link to="/login">
-                    <button className="button read-btn">Already have an account?</button>
+                    <button className="new-btn read-btn">Already have an account?</button>
                     </Link>
                 </div>
             </section>
         </div>
         <div className="image-side">
-            <img src="./hero-img.png" alt="hero-img" className="home-img" />
+            {theme === "dark" ? (
+            <img src="./extra5.svg" alt="hero-img" className="home-img" /> ) : ( 
+            <img src="./hero-img.png" alt="hero-img" /> 
+            ) }
         </div>
     </div>
 </div>

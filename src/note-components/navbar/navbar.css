@@ -6,15 +6,19 @@ body {
 
 .main-nav {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     margin: 0;
-    box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.1);
+    /* padding: 0px 20px 0px ; */
+    box-shadow: 2px 6px 6px 0px rgba(235, 235, 235, 0.1);
+    background-color: var(--whitesmoke-color);
+    border-bottom-right-radius: 20px ;
 }
 
 .brand-name {
     font-weight: 500;
     color: var(--primary-color);
+    padding-left: 3rem;
 }
 
 .search-bar {
@@ -43,3 +47,12 @@ body {
 .btn:hover {
     background-color: var(--secondary-color);
 }
+
+.theme-btn{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding-right: 3rem;
+}
+
+

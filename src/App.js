@@ -8,11 +8,15 @@ import { Trash } from "./note-components/trash/trash";
 import { Route, Routes } from "react-router-dom";
 import { Signup } from "./note-components/authentication/signup";
 import { Label } from "./note-components/label/label";
+import { useTheme } from "./Context/theme-context";
+import { Navbar } from "./note-components/navbar/navbar"
 
 
 function App() {
+  const { theme } = useTheme();
   return (
-    <div className="App">
+    <div className={`App ${theme === "dark" ? "dark-theme" : ""}`}>
+      <Navbar/>
       <Routes>
       <Route path = "/" element = { <Homepage/> } />
       <Route path = "/notes" element = { <Note/> } />

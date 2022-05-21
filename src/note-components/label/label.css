@@ -1,30 +1,22 @@
 .right-cont{
     justify-content: left;
 }
-.chips-box{
-    display: flex;
-    /* flex-direction: column; */
-    background-color: aquamarine;
-    width: 12.5rem;
-    height: 12.5rem;
-}
-.chip{
+/* .chip{
     width: 6.25rem;
     height: 2.5rem;
-}
+} */
 .main-chip-cont{
     display: flex;
     flex-direction: column;
-    border: 1px solid thistle;
+    border: 1px solid var(--secondary-color);
     border-radius: 5px;
     margin: 10px;
     padding: 10px;
-    cursor: pointer; 
 }
 .marginned{
     margin: 0.9375rem;
     padding: 0px 0px 5px 15px;
-    background-color: rgb(231, 216, 231);
+    background-color: var(--secondary-color);
     border-radius: 5px;
 }
 .margin{
@@ -35,7 +27,7 @@
     padding: 0;
 }
 li .input{
-    background-color:thistle;
+    background-color: var(--secondary-color);
 }
 .input-fruit{
     border: none;
@@ -43,33 +35,39 @@ li .input{
     background-color: transparent;
 }
 .user-input{
-    background-color: rgb(231, 216, 231);
+    background-color: var(--secondary-color);
 }
-.user-input:hover{
-    background-color: rgb(231, 216, 231);
-}
+
 .input-fruit::placeholder{
     font-weight: 600;
     font-family: 'Montserrat', sans-serif;
 }
 h5{
-    color: rgb(146, 91, 146);
+    color: var(--primary-color);
 }
 .list-item, .new-item{
     display: inline-block;
     padding: 10px;
     margin: 5px;
-    background-color: thistle;
+    background-color: var(--whitesmoke-color);
     border: none;
     border-radius: 1.25rem;
+    text-align: center;
+    padding-left: 20px;
 }
 .new-item:hover{
-    border-bottom: 2px solid rgb(145, 60, 145);
+    border-bottom: 2px solid var(--primary-color);
 }
 .list-item:hover{
     color: white;
-    background-color: rgb(145, 60, 145);
+    background-color: var(--primary-color);
 }
 .icon-cross{
-    margin-left: auto;
+    margin-left: 10px;
+
+}
+
+.chip-icon{
+    color: var(--secondary-color);
+    cursor: pointer;
 }

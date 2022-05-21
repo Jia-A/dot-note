@@ -58,7 +58,6 @@ console.log(error);
 
 return (
 <div className="App">
-  <Navbar />
   <main class="form-main align-justify-center margin-30">
 
     <div class="form-container align-justify-center">
@@ -78,7 +77,7 @@ return (
             <input type="checkbox" id="remem-me" />
             Remember me
           </label>
-          <button class="button read-btn">Forgot your password?</button>
+          <button class="new-ac">Forgot your password?</button>
         </div>
         <div>
           <button class="submit-btn btn primary-btn" onClick={guestUserHandler}>Guest</button>
@@ -87,7 +86,7 @@ return (
           <button class="submit-btn btn primary-btn" onClick={loginHandler}>Login</button>
         </div>
         <Link to="/signup" className="link-style link-color-primary">
-        <button class="new-ac button read-btn"> Create new account </button>
+        <button class="new-ac"> Create new account </button>
         </Link>
       </form>
     </div>

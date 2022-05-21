@@ -11,6 +11,7 @@ body {
     align-items: center;
     justify-content: center;
 
+
 }
 
 .form-container {
@@ -21,6 +22,8 @@ body {
     padding: 1.25rem;
     align-items: center;
     justify-content: center;
+    background-color: var(--whitesmoke-color);
+    border-radius: 5px;
 
 }
 
@@ -34,11 +37,22 @@ body {
 }
 
 .new-ac {
-    text-decoration: underline;
+    background-color: transparent;
+    font-family: "Montserrat", sans-serif;
+    border: none;
+    font-size: 1rem;
+    padding-top: 5px ;
+    cursor: pointer;
+
+}
+.new-ac:hover{
+    color: var(--secondary-color);
+    text-decoration: 1px solid var(--primary-color) underline;
 }
 
 .label-inp {
     margin-bottom: 1px;
+    color: var(--primary-color);
 }
 
 .pass-rem {
@@ -80,4 +94,15 @@ body {
 
 .link-color-primary {
     color: var(--primary-color);
+}
+
+.new-btn{
+    border: none;
+    border-radius: var(--border-radius);
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    margin: 3px;
+    padding: 10px;
+    font-weight: 500;
+    text-decoration:  1px solid var(--secondary-color) underline;
 }

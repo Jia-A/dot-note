@@ -73,9 +73,10 @@ const NoteProvider = ({
     mainContent: "",
     backColor: "",
     tagName: "",
-    priorityLevel: ""
+    priorityLevel: "",
+    currentDate : ""
   });
-  const [tag, setTag] = useState(["Work", "Office", "Home", "Exercise", "Study", "Fun"]);
+  const [tag, setTag] = useState(["Work", "Office", "Home"]);
 
 
   return ( <NoteContext.Provider value = {
