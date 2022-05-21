@@ -31,6 +31,10 @@ navigate("/login")
 }
 };
 
+// const dateAndTime = () =>{
+//     const date = new Date().toLocaleString();
+//     return date;
+// }
 
 const moveToArchive = async (item) =>{
 try{
@@ -106,9 +110,11 @@ return(
                     </div>
                     <div className="foot-icons">
                         <button className="button read-btn" onClick={noteCreateFuntion}><i
+
                                 class="fal fa-plus icon-note"></i></button>
                         <input type="color" id="color-btn" value={notes.backColor} onChange={(e)=> setNote(() => ({...notes,
                         backColor : e.target.value}))} />
+
                     </div>
                 </div>
             </div>
@@ -124,7 +130,6 @@ return(
                     <span className="pin"><i class="fad fa-thumbtack"></i></span>
                 </div>
                 <p className="note-list-content">{item.mainContent}</p>
-                
 
                 <div className="note-foot">
                     <small className="date-time">{item.currentDate}</small>
