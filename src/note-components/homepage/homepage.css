@@ -10,7 +10,6 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 80vh;
-    /* margin-top: -80px; */
 
 }
 
@@ -26,8 +25,8 @@ body {
 }
 
 .home-img{
-    width: 500px;
-    height: 500px;
+    width: 31.25rem;
+    height: 31.25rem;
 }
 .btn-div {
     display: flex;

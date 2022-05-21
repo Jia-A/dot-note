@@ -1,4 +1,3 @@
-import { Navbar } from "../navbar/navbar";
 import "./auth.css";
 import { useAuth } from "../../Context/authorization-context";
 import { useState } from "react";
@@ -59,9 +58,7 @@ console.log(error);
 return (
 <div className="App">
   <main class="form-main align-justify-center margin-30">
-
     <div class="form-container align-justify-center">
-
       <form action="" class="login-form">
         <h2 class="form-head">Login Form</h2>
         <label for="email" class="label-inp">Email address*</label>

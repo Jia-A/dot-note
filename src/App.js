@@ -1,5 +1,4 @@
 import "./App.css";
-import logo from "./logo.png";
 import { Archive } from "./note-components/archive/archive";
 import { Login } from "./note-components/authentication/login";
 import { Homepage } from "./note-components/homepage/homepage";

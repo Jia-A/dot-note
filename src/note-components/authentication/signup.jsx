@@ -58,9 +58,7 @@ console.log(error);
 return (
 <div className="App">
   <main class="form-main align-justify-center margin-30">
-
     <div class="form-container align-justify-center">
-
       <form action="" class="signup-form">
         <h2 class="form-head">SignUp Form</h2>
         <label for="fname" class="label-inp">Firstname*</label>

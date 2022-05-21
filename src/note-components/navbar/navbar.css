@@ -9,7 +9,6 @@ body {
     justify-content: space-between;
     align-items: center;
     margin: 0;
-    /* padding: 0px 20px 0px ; */
     box-shadow: 2px 6px 6px 0px rgba(235, 235, 235, 0.1);
     background-color: var(--whitesmoke-color);
     border-bottom-right-radius: 20px ;

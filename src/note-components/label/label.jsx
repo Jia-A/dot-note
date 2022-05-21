@@ -1,5 +1,4 @@
 import "./label.css";
-import { Navbar } from "../navbar/navbar";
 import { Sidebar } from "../sidebar/sidebar";
 import { useNote } from "../../Context/note-context";
 
@@ -23,7 +22,6 @@ setTag(tag.filter((_, index)=>index!==deletingTag));
 }
 return (
 <div className="App">
-    {/* <Navbar /> */}
     <div className="main-container">
         <Sidebar />
         <div className="right-cont">

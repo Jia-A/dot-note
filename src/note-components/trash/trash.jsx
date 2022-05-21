@@ -1,5 +1,4 @@
 import "../notepage/note.css";
-import { Navbar } from "../navbar/navbar";
 import { Sidebar } from "../sidebar/sidebar";
 import { useNote } from "../../Context/note-context";
 
@@ -8,7 +7,6 @@ const Trash = () =>{
     const { trash } = noteState;
     return (
         <div className="App">
-            {/* <Navbar/> */}
             <div className="main-container">
                 <Sidebar/>
                 <div className="right-cont">

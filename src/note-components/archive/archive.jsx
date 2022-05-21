@@ -1,6 +1,5 @@
 import "../notepage/note.css";
 import axios from "axios";
-import { Navbar } from "../navbar/navbar";
 import { Sidebar } from "../sidebar/sidebar";
 import { useNote} from "../../Context/note-context";
 import { useAuth } from "../../Context/authorization-context";
@@ -49,7 +48,6 @@ console.log(error);
 
 return (
 <div className="App">
-    {/* <Navbar /> */}
     <div className="main-container">
         <Sidebar />
         <div className="right-cont">

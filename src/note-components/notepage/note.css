@@ -2,7 +2,6 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    /* margin-bottom: 3.125rem; */
 }
 
 .main-container {
@@ -13,7 +12,7 @@ body {
 .left-nav {
     text-align: center;
     width: 20%;
-    align-self :flex-start ;
+    align-self: flex-start;
     box-shadow: 2px 2px 6px 0px rgba(207, 207, 207, 0.1);
 }
 
@@ -27,23 +26,22 @@ body {
     margin: 0.9375rem;
     padding: 10px;
     border-radius: 5px;
-    /* color: var(--primary-color); */
 }
 
 .left-item:hover {
     background-color: #b6bfc9;
 }
 
-.logout-btn{
+.logout-btn {
     cursor: pointer;
 }
 
 /* Right Flex Container Main */
 
-.right-cont, .right-cont-note {
+.right-cont,
+.right-cont-note {
     margin-top: 1.875rem;
     display: flex;
-    /* justify-content: center; */
     align-items: center;
     flex-direction: column;
     gap: 1.25rem;
@@ -59,49 +57,49 @@ span {
     margin-right: 10px;
 }
 
-.right-cont{
+.right-cont {
     width: 80%;
 }
 
-.right-cont-note{
+.right-cont-note {
     width: 65%;
 }
 
 /* Filter CSS */
 
-.filter-container{
+.filter-container {
     width: 15%;
     box-shadow: 4px 2px 9px 4px rgba(207, 207, 207, 0.1);
     text-align: left;
-    padding:  0px 0px 10px 10px;
+    padding: 0px 0px 10px 10px;
     align-self: flex-start;
 }
 
-.sort-label{
+.sort-label {
     font-style: italic;
     text-decoration: 1px solid underline;
     font-size: 1.2rem;
 }
 
-h2{
+h2 {
     font-weight: lighter;
     margin-left: 10px;
-    /* color: black; */
 }
-.fil-inp{
+
+.fil-inp {
     margin-right: 5px;
 }
+
 /* New Note Container Properties */
 
 .note-container {
     background-color: #b6bfc9;
     border-radius: 10px;
-    /* padding: 10px; */
     padding: 0px 0px 10px 0px;
-    width: 31.25rem;
+    width: 60%;
 }
 
-.note-head{
+.note-head {
     background-color: var(--primary-color);
 }
 
@@ -115,22 +113,25 @@ h2{
     font-size: large;
     text-transform: capitalize;
 }
-.t-and-p{
-    margin-left: 20px;
-    display : flex;
-    gap: 20px;
+
+.t-and-p {
+    margin-left: 1.25rem;
+    display: flex;
+    gap: 1.25rem;
 }
-.drop-down{
+
+.drop-down {
     padding: 5px;
     background-color: transparent;
     border-radius: 5px;
     font-family: "Montserrat", sans-serif;
-    border: 1px solid #133863;
+    border: 1px solid var(--primary-color);
 }
 
-.drop-down:focus{
+.drop-down:focus {
     outline: none;
 }
+
 .date-inp,
 .note-title {
     margin-left: 10px;
@@ -156,28 +157,31 @@ h2{
     outline: none;
 }
 
-.note-title::placeholder{
+.note-title::placeholder {
     color: var(--secondary-color);
 }
+
 .note-text:focus {
     outline: none;
 }
-.note-text::placeholder{
+
+.note-text::placeholder {
     color: var(--primary-color);
     font-style: italic;
 }
+
 /* Created Note  */
 
 .note-list {
     border-radius: 10px;
     padding: 10px;
-    background-color: #133863;
-    box-shadow : 2px 2px 6px 0px rgb(85, 85, 85);
-    min-width: 300px;
+    background-color: var(--primary-color);
+    box-shadow: 2px 2px 6px 0px rgb(85, 85, 85);
+    min-width: 40%;
 }
 
 
-.note-list-content{
+.note-list-content {
     color: var(--whitesmoke-color);
     font-size: 1.2rem;
     padding: 10px 10px 10px 0px;
@@ -186,7 +190,7 @@ h2{
     text-transform: capitalize;
 }
 
-.note-list-title{
+.note-list-title {
     color: var(--whitesmoke-color);
     padding: 10px;
     text-decoration: underline;
@@ -195,32 +199,33 @@ h2{
 }
 
 
-.note-list-head{
+.note-list-head {
     border-bottom: 0.1px solid whitesmoke;
 }
-h3{
+
+h3 {
     font-weight: 300;
 }
 
-.label{
+.label {
     font-size: small;
     background-color: whitesmoke;
     border-radius: 5px;
     color: var(--primary-color);
-    /* text-align: center; */
     align-self: center;
-    padding:5px;
+    padding: 5px;
     opacity: 0.4;
 }
 
-.fad{
+.fad {
     cursor: pointer;
-    color : var(--whitesmoke-color);
+    color: var(--whitesmoke-color);
 }
 
-.date-time{
+.date-time {
     font-size: 12px;
 }
+
 /* Common CSS */
 
 .note-foot {
@@ -238,50 +243,35 @@ h3{
 .foot-icons {
     display: flex;
     gap: 10px;
-    /* margin-left: auto; */
 }
 
-.page-head{
-    /* color: #082546; */
+.page-head {
     font-style: italic;
     font-weight: 700;
     margin-top: 0px;
     text-decoration: underline 1px var(--secondary-color);
 }
 
-#color-btn{
+#color-btn {
     width: 25px;
     background-color: transparent;
     border: none;
-    /* border-radius: 5px; */
     margin-top: 8px;
 }
-.icon-note{
+
+.icon-note {
     color: var(--primary-color)
 }
-.pin-icon{
+
+.pin-icon {
     color: var(--secondary-color);
 }
 
-.note-head, .note-list-head {
+.note-head,
+.note-list-head {
     display: flex;
     gap: 1.25rem;
     border-radius: 5px 5px 0px 0px;
     padding: 10px 10px;
     text-align: center;
 }
-
-/* input[type="color"] {
-	opacity: 5;
-	display: block;
-    width: 20px;
-    height: 20px;
-	border: none;
-    border-radius: 100%;
-    background: none;
-} */
-
-
-
-
-

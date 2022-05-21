@@ -1,11 +1,8 @@
-.right-cont{
+.right-cont {
     justify-content: left;
 }
-/* .chip{
-    width: 6.25rem;
-    height: 2.5rem;
-} */
-.main-chip-cont{
+
+.main-chip-cont {
     display: flex;
     flex-direction: column;
     border: 1px solid var(--secondary-color);
@@ -13,39 +10,47 @@
     margin: 10px;
     padding: 10px;
 }
-.marginned{
+
+.marginned {
     margin: 0.9375rem;
     padding: 0px 0px 5px 15px;
     background-color: var(--secondary-color);
     border-radius: 5px;
 }
-.margin{
+
+.margin {
     list-style-type: none;
     margin: 10px;
     display: flex;
     flex-wrap: wrap;
     padding: 0;
 }
-li .input{
+
+li .input {
     background-color: var(--secondary-color);
 }
-.input-fruit{
+
+.input-fruit {
     border: none;
     outline: none;
     background-color: transparent;
 }
-.user-input{
+
+.user-input {
     background-color: var(--secondary-color);
 }
 
-.input-fruit::placeholder{
+.input-fruit::placeholder {
     font-weight: 600;
     font-family: 'Montserrat', sans-serif;
 }
-h5{
+
+h5 {
     color: var(--primary-color);
 }
-.list-item, .new-item{
+
+.list-item,
+.new-item {
     display: inline-block;
     padding: 10px;
     margin: 5px;
@@ -53,21 +58,24 @@ h5{
     border: none;
     border-radius: 1.25rem;
     text-align: center;
-    padding-left: 20px;
+    padding-left: 1.25rem;
 }
-.new-item:hover{
+
+.new-item:hover {
     border-bottom: 2px solid var(--primary-color);
 }
-.list-item:hover{
+
+.list-item:hover {
     color: white;
     background-color: var(--primary-color);
 }
-.icon-cross{
+
+.icon-cross {
     margin-left: 10px;
 
 }
 
-.chip-icon{
+.chip-icon {
     color: var(--secondary-color);
     cursor: pointer;
 }

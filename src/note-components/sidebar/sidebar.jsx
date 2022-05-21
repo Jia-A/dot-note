@@ -1,23 +1,18 @@
 import "../notepage/note.css";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../../Context/authorization-context";
-// import { toast } from "react-toastify";
-// import { Filter } from "../filter/filter";
 
 const Sidebar = () =>{
     const { authDispatch } = useAuth();
     const navigate = useNavigate();
     const logoutHandler = () => {
-        // toast.success("Successfully Logged out.")
         navigate("/")
         localStorage.removeItem("token");
         localStorage.removeItem("user");
         authDispatch({ type: "LOGOUT" });
-        // toast.success("Successfully Logged out.")
         }
 
     const activeLink = ({isActive}) =>({
-        // backgroundColor : isActive ? "#1D3461" : "",
         color : isActive ? "var(--primary-color)" : "var(--secondary-color)"
     })
 return(
