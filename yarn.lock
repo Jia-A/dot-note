@@ -11040,6 +11040,11 @@
     "regex-not" "^1.0.2"
     "safe-regex" "^1.1.0"
 
+"toastify@^2.0.1":
+  "integrity" "sha512-Me/O93yAlwiHYwqX0su60Wv+X9ngzIT6nBLbNAFED095gMSjCBYKdu+faBxV6SE8CiQjUTBLrz8LwoXMtGz+yw=="
+  "resolved" "https://registry.npmjs.org/toastify/-/toastify-2.0.1.tgz"
+  "version" "2.0.1"
+
 "toidentifier@1.0.1":
   "integrity" "sha512-o5sSPKEkg/DIQNmH43V0/uerLrpzVedkUh8tGNvaeXpfpuwjKenlSox/2O/BTlZUtEe+JG7s5YhEz608PlAHRA=="
   "resolved" "https://registry.npmjs.org/toidentifier/-/toidentifier-1.0.1.tgz"
