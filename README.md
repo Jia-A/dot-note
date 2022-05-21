@@ -23,6 +23,7 @@ Explore [Dot Note](https://dot-note.netlify.app/) and start writing down everyth
 - Archive your notes and restore them.
 - Add tags and priorities to your notes.
 - Sort your notes.
+- Change background color for your note card.
 - Write and see notes in dark mode.
 
 <br />
