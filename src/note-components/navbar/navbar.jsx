@@ -1,30 +1,25 @@
-import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../../Context/authorization-context";
+import { Link } from "react-router-dom";
 import "./navbar.css";
-
+import { useTheme } from "../../Context/theme-context";
 const Navbar = () => {
-const { authDispatch } = useAuth();
-const navigate = useNavigate();
 
-const logoutHandler = () =>{
-navigate("/")
-localStorage.removeItem("token");
-localStorage.removeItem("user");
-authDispatch({ type: "LOGOUT" });
-}
+const { theme, setTheme } = useTheme();
+
 return (
 
 <nav className="main-nav">
   <Link to="/" className="link-style link-color-primary">
   <h2 className="brand-name">Dot Notes</h2>
   </Link>
-  <div className="search">
+  {/* <div className="search">
     <input type="text" placeholder="Search notes" className="search-bar" />
-  </div>
-  <button className="btn" onClick={logoutHandler}>Logout</button>
-  <div className="avatar-box">
+  </div> */}
+  {/* <div className="avatar-box">
     <img src="./avatar-image.jpg" alt="avatar" className="av-size" />
-  </div>
+  </div> */}
+  { theme === "light" ? (
+  <button className="theme-btn" onClick={()=> setTheme("dark")}><i class="fas fa-moon"></i></button> ) : 
+  ( <button className="theme-btn" onClick={()=> setTheme("light")}><i class="fas fa-sun"></i></button> )}
 </nav>
 );
 }

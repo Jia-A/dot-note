@@ -31,8 +31,6 @@ const noteReducer = (noteState, {
           note: payload.note,
             archive: payload.archive,
         }
-
-
       case "DELETE_NOTE_FROM_ARCHIVE" : 
       return {
         ...noteState,
@@ -66,7 +64,7 @@ const NoteProvider = ({
     archive: [],
     tags: [],
     priority: ["Critical", "Major", "Moderate", "Low"],
-    // filterTagPriority : {Critical : false, Major : false, Moderate : false, Low : false},
+
   });
   const [notes, setNote] = useState({
     title: "",
@@ -76,7 +74,7 @@ const NoteProvider = ({
     priorityLevel: "",
     currentDate : ""
   });
-  const [tag, setTag] = useState(["Work", "Office", "Home", "Exercise", "Study", "Fun"]);
+  const [tag, setTag] = useState(["Work", "Office", "Home"]);
 
 
   return ( <NoteContext.Provider value = {
