@@ -25,6 +25,7 @@ const Trash = () =>{
                         <p className="note-list-content">{item.mainContent}</p>
 
                         <div className="note-foot">
+                        <small className="date-time">{item.currentDate}</small>
                             <div className="foot-icons">
                                 <span><i class="fad fa-inbox-in note-list-icon"></i></span>
                                 <span onClick={(e)=>noteDispatch({type : "DELETE_FROM_TRASH", payload : item._id})}><i class="fad fa-trash note-list-icon"></i></span>

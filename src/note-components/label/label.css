@@ -41,8 +41,9 @@ li .input {
 }
 
 .input-fruit::placeholder {
-    font-weight: 600;
+    font-weight: 500;
     font-family: 'Montserrat', sans-serif;
+
 }
 
 h5 {

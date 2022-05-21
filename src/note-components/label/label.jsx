@@ -34,7 +34,7 @@ return (
                                 onClick={()=>deleteCreatedTag(index)}><i class="fal fa-times-circle chip-icon"></i></span></li>
                         ))}
                         <li class="new-item user-input"><input type="text" className="input-fruit"
-                                placeholder="New Favourite..." onChange={(e)=>newTag=e.target.value}/><span
+                                placeholder="New tag" onChange={(e)=>newTag=e.target.value}/><span
                                 onClick={tagCreationFunction}><i className="fal fa-plus chip-icon"></i></span></li>
                     </ul>
                 </div>

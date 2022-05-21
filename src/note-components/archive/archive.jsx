@@ -66,6 +66,7 @@ return (
                 <p className="note-list-content">{item.mainContent}</p>
 
                 <div className="note-foot">
+                <small className="date-time">{item.currentDate}</small>
                     <div className="foot-icons">
                         <span onClick={()=>restoreNoteFromArchive(item)}><i class="fad fa-inbox-out note-list-icon"></i></span>
                         <span onClick={()=>moveToTrashFromArchive(item)}><i class="fad fa-trash note-list-icon"></i></span>
