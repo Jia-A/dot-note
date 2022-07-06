@@ -187,7 +187,7 @@ return(
                             <textarea type="text" cols="20" rows="5" className="modal-inp input" value={newNote.mainContent} 
                             onChange={(e) =>setNewNote({ ...newNote, mainContent: e.target.value, currentDate : new Date().toLocaleString() })}
                             required></textarea>
-                            <div className="new-foot">
+                            <div className="edit-modal-foot">
                         <select name="tags" id="" onClick={(e)=>setNewNote(()=>({...newNote, tagName : e.target.value}))}>
                         <option selected disabled>Tags</option>
                         {tag.map((item)=> (
