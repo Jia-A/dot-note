@@ -276,3 +276,24 @@ h3 {
     padding: 10px 10px;
     text-align: center;
 }
+
+.cancel{
+    cursor: pointer;
+}
+.modal-inp{
+    width : 70%
+}
+
+.modal-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.new-foot{
+    display: flex;
+    justify-content: space-around;
+    margin: 10px;
+    gap: 5px;
+}
+
