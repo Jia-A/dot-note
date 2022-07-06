@@ -1,9 +1,11 @@
 import {
   createContext,
   useContext,
+  useEffect,
   useReducer,
   useState
 } from "react";
+import { getAllNotes } from "../note-API/note-create";
 
 const NoteContext = createContext();
 
@@ -13,6 +15,11 @@ const noteReducer = (noteState, {
 }) => {
 
   switch (type) {
+    case "SET_NOTES" : 
+      return {
+        ...noteState, 
+        note : payload
+      }
     case "ADD_NOTE":
       return {
         ...noteState, note: payload
@@ -66,7 +73,6 @@ const NoteProvider = ({
     archive: [],
     tags: [],
     priority: ["Critical", "Major", "Moderate", "Low"],
-    // filterTagPriority : {Critical : false, Major : false, Moderate : false, Low : false},
   });
   const [notes, setNote] = useState({
     title: "",
@@ -76,6 +82,19 @@ const NoteProvider = ({
     priorityLevel: ""
   });
   const [tag, setTag] = useState(["Work", "Office", "Home", "Exercise", "Study", "Fun"]);
+
+  // useEffect(()=>{
+  //   const allNotes = async () =>{
+  //     try{
+  //       const response = await getAllNotes();
+  //       noteDispatch({type : "SET_NOTES", payload : response.notes})
+  //     }
+  //     catch(error){
+  //       console.log(error)
+  //     }
+  //   }
+  //   allNotes();
+  // }, [])
 
 
   return ( <NoteContext.Provider value = {

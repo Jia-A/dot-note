@@ -102,6 +102,7 @@ export const deleteNoteHandler = function (schema, request) {
  * */
 
 export const updateNoteHandler = function (schema, request) {
+  console.log("Controller console",request)
   const user = requiresAuth.call(this, request);
   try {
     if (!user) {
@@ -114,8 +115,10 @@ export const updateNoteHandler = function (schema, request) {
       );
     }
     const { note } = JSON.parse(request.requestBody);
+    console.log(note)
     const { noteId } = request.params;
     const noteIndex = user.notes.findIndex((note) => note._id === noteId);
+    console.log("NoteIndex",noteIndex)
     user.notes[noteIndex] = { ...user.notes[noteIndex], ...note };
     this.db.users.update({ _id: user._id }, user);
     return new Response(201, {}, { notes: user.notes });
