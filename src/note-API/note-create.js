@@ -1,4 +1,5 @@
 import axios from "axios";
+import toast from "react-hot-toast";
 
 const noteCreate = async (note, token, noteDispatch) => {
     try {
@@ -18,8 +19,10 @@ const noteCreate = async (note, token, noteDispatch) => {
                 type: "ADD_NOTE",
                 payload: result.data.notes
             });
+            toast.success("New note created!")
         } else throw new Error();
     } catch (error) {
+        toast.error("Can't create new note!")
         console.log(error);
     }
 };
@@ -36,10 +39,13 @@ const editNote = async (token, newNote, note, noteDispatch) =>{
             noteDispatch({
                 type: "ADD_NOTE",
                 payload: response.data.notes
-            });           
+            }); 
+            toast.success("Note edited!")             
         }
+        
     }
     catch(error){
+        toast.error("Can't edit note!")
         console.log(error)
     }
 }
