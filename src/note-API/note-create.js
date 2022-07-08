@@ -24,6 +24,27 @@ const noteCreate = async (note, token, noteDispatch) => {
     }
 };
 
+const editNote = async (token, newNote, note, noteDispatch) =>{
+    try{
+        const response = await axios({
+            url : `api/notes/${note._id}`,
+            method : "post",
+            data : { note : newNote },
+            headers : { authorization : token}
+        })
+        if(response.status === 200 || response.status === 201 ){
+            noteDispatch({
+                type: "ADD_NOTE",
+                payload: response.data.notes
+            });           
+        }
+    }
+    catch(error){
+        console.log(error)
+    }
+}
+
 export {
-    noteCreate
-};
+    noteCreate, 
+    editNote,
+}
