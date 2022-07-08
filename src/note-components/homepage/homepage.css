@@ -10,6 +10,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 80vh;
+    flex-wrap: wrap;
 
 }
 
@@ -80,3 +81,37 @@ body {
     font-weight: 500;
     text-decoration:  1px solid var(--secondary-color) underline;
 }
+
+
+@media screen and (max-width : 1200px) {
+    .content-side{ 
+        width: 90%;
+    }
+    .image-side{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width : 635px) {
+    .home-img{
+        width: 27.25rem;
+        height: 27.25rem;
+    }
+    .home-light-img{
+        width: 26.25rem;
+        height: 21.25rem;
+    }
+}
+
+@media screen and (max-width : 445px) {
+    .home-img{
+        width: 18.25rem;
+        height: 18.25rem;
+    }
+    .home-light-img{
+        width: 18.25rem;
+        height: 13.25rem;
+    }
+}
+
+

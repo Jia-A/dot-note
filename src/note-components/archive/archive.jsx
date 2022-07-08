@@ -3,6 +3,8 @@ import axios from "axios";
 import { Sidebar } from "../sidebar/sidebar";
 import { useNote} from "../../Context/note-context";
 import { useAuth } from "../../Context/authorization-context";
+import { Navbar } from "../navbar/navbar";
+import toast from "react-hot-toast";
 
 const Archive = () =>{
 const { noteState, noteDispatch } = useNote();
@@ -21,6 +23,7 @@ try{
     console.log(response)
     if(response.status === 200 || response.status === 201){
         noteDispatch({type : "RESTORE_ARCHIVED_NOTE", payload : { archive : response.data.archives, note : response.data.notes}})
+        toast.success("Note restore from archive!")
     }
 }
 catch(error){
@@ -39,6 +42,7 @@ headers:{authorization: token},
 console.log(response)
 if(response.status === 200 || response.status === 201){
 noteDispatch({type : "DELETE_NOTE_FROM_ARCHIVE", payload : {archive : response.data.archives, trash : item}})
+toast.success("Note dumped in trash!")
 }
 }
 catch (error){
@@ -48,6 +52,7 @@ console.log(error);
 
 return (
 <div className="App">
+    <Navbar/>
     <div className="main-container">
         <Sidebar />
         <div className="right-cont">

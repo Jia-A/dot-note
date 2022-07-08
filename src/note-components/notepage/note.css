@@ -63,6 +63,9 @@ span {
 
 .right-cont-note {
     width: 65%;
+    justify-items: center;
+    align-self:  auto;
+
 }
 
 /* Filter CSS */
@@ -96,7 +99,7 @@ h2 {
     background-color: #b6bfc9;
     border-radius: 10px;
     padding: 0px 0px 10px 0px;
-    width: 60%;
+    /* width: 100%; */
 }
 
 .note-head {
@@ -258,6 +261,7 @@ h3 {
     background-color: transparent;
     border: none;
     margin-top: 8px;
+    margin-right: 10px;
 }
 
 .icon-note {
@@ -297,3 +301,14 @@ h3 {
     gap: 5px;
 }
 
+@media screen and (max-width : 800px) {
+    .left-nav, .filter-container{
+        display: none;
+    }
+    .main-container{
+        justify-content: center;
+    }
+    .note-text{
+        width: 15rem;
+    }
+}
