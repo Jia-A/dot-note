@@ -8,14 +8,14 @@ import { Route, Routes } from "react-router-dom";
 import { Signup } from "./note-components/authentication/signup";
 import { Label } from "./note-components/label/label";
 import { useTheme } from "./Context/theme-context";
-import { Navbar } from "./note-components/navbar/navbar"
+import { Toaster } from "react-hot-toast"
 
 
 function App() {
   const { theme } = useTheme();
   return (
     <div className={`App ${theme === "dark" ? "dark-theme" : ""}`}>
-      <Navbar/>
+      <Toaster/>
       <Routes>
       <Route path = "/" element = { <Homepage/> } />
       <Route path = "/notes" element = { <Note/> } />

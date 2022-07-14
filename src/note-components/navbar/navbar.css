@@ -51,7 +51,34 @@ body {
     background-color: transparent;
     border: none;
     cursor: pointer;
-    padding-right: 3rem;
+    padding: 1rem;
+    font-size: 1.2rem;
 }
 
+.ham-hide{
+    display: none;
+}
+
+.hidden{
+    background-color: var(--whitesmoke-color);
+    position: fixed;
+    right: 0;
+    top: 0;
+    margin: 0;
+    height: 100vh;
+    z-index: 15;
+    box-shadow: 4px 2px 9px 4px rgba(207, 207, 207, 0.1);
+}
+
+.nav-buttons{
+    display: flex;
+    gap: 5px;
+}
+
+
+@media screen and (max-width : 800px) {
+    .ham-hide{
+        display: block;
+    }
+}
 

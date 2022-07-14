@@ -3,11 +3,14 @@ import "./auth.css";
 import { signUpAPI } from "../../note-API/auth-api";
 import { useAuth } from "../../Context/authorization-context";
 import { useState } from "react";
+import { useTheme } from "../../Context/theme-context";
+import toast from "react-hot-toast"
 
 
 const Signup = () =>{
 const { authState, authDispatch } = useAuth();
 const navigate = useNavigate();
+const { theme, setTheme } = useTheme();
 const [user, setUser] = useState({
 fname: "",
 lname: "",
@@ -44,12 +47,14 @@ user: response.data.createdUser,
 token: response.data.encodedToken,
 },
 });
+toast.success("Signup successful!")
 
 navigate("/notes");
 } else {
 throw new Error("Something went wrong! Please try again later");
 }
 } catch (error) {
+  toast.error("Signup failed.")
 console.log(error);
 }
 } else alert("Enter all the fields");
@@ -57,6 +62,14 @@ console.log(error);
 
 return (
 <div className="App">
+<nav className="main-nav">
+  <Link to="/" className="link-style link-color-primary">
+  <h2 className="brand-name">Dot Notes</h2>
+  </Link>
+  { theme === "light" ? (
+  <button className="theme-btn" onClick={()=> setTheme("dark")}><i class="fas fa-moon"></i></button> ) : 
+  ( <button className="theme-btn" onClick={()=> setTheme("light")}><i class="fas fa-sun"></i></button> )}
+</nav>
   <main class="form-main align-justify-center margin-30">
     <div class="form-container align-justify-center">
       <form action="" class="signup-form">

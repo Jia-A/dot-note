@@ -3,11 +3,25 @@ import { Link } from "react-router-dom";
 import { useTheme } from "../../Context/theme-context";
 
 const Homepage = () =>{
-    const { theme } = useTheme();
+    const { theme, setTheme } = useTheme();
 return(
 <div className="App">
+<nav className="main-nav">
+  <Link to="/" className="link-style link-color-primary">
+  <h2 className="brand-name">Dot Notes</h2>
+  </Link>
+  { theme === "light" ? (
+  <button className="theme-btn" onClick={()=> setTheme("dark")}><i class="fas fa-moon"></i></button> ) : 
+  ( <button className="theme-btn" onClick={()=> setTheme("light")}><i class="fas fa-sun"></i></button> )}
+</nav>
 
     <div className="body-div">
+    <div className="image-side">
+            {theme === "dark" ? (
+            <img src="./extra5.svg" alt="hero-img" className="home-img" /> ) : ( 
+            <img src="./hero-img.png" alt="hero-img" className="home-light-img" /> 
+            ) }
+        </div>
         <div className="content-side">
             <h1 className="home-brand">DOT NOTE</h1>
             <section className="home-content">
@@ -24,12 +38,7 @@ return(
                 </div>
             </section>
         </div>
-        <div className="image-side">
-            {theme === "dark" ? (
-            <img src="./extra5.svg" alt="hero-img" className="home-img" /> ) : ( 
-            <img src="./hero-img.png" alt="hero-img" /> 
-            ) }
-        </div>
+        
     </div>
 </div>
 );

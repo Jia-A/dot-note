@@ -9,6 +9,8 @@ import { Filter } from "../filter/filter";
 import { useFilter } from "../../Context/filter-context";
 import { useState } from "react";
 import Modal from "react-modal";
+import { Navbar } from "../navbar/navbar";
+import toast from "react-hot-toast"
 
 
 
@@ -58,11 +60,6 @@ navigate("/login")
 }
 };
 
-// const dateAndTime = () =>{
-//     const date = new Date().toLocaleString();
-//     return date;
-// }
-
 const moveToArchive = async (item) =>{
 try{
 const response = await axios({
@@ -74,9 +71,11 @@ headers : {authorization : token},
 console.log("try passed");
 if(response.status === 200 || response.status === 201){
 noteDispatch({type : "MOVE_TO_ARCHIVE", payload : { note : response.data.notes, archive : response.data.archives}})
+toast.success("Note moved to archive!")
 }
 }
 catch (error){
+    toast.error("Can't move note to archive")
 console.log(error);
 }
 console.log("Done");
@@ -94,9 +93,11 @@ headers:{authorization: token},
 console.log(response)
 if(response.status === 200 || response.status === 201){
 noteDispatch({type : "DELETE_NOTE", payload : {note : response.data.notes, trash : item}})
+toast.success("Note dumped in trash!")
 }
 }
 catch (error){
+    toast.error("Can't dump note in trash")
 console.log(error);
 }
 }
@@ -106,6 +107,7 @@ console.log(error);
 
 return(
 <div className="App">
+    <Navbar/>
     <div className="main-container">
         <Sidebar />
         <div className="right-cont-note">
