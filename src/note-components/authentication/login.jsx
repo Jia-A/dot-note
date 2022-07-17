@@ -14,8 +14,8 @@ const { theme, setTheme } = useTheme();
 const navigate = useNavigate();
 
 const guestUserInfo = {
-email: "adarshbalika@gmail.com",
-password: "adarshBalika123",
+  email: "billiejean2011@gmail.com",
+  password: "smoothcriminal",
 };
 
 const newInfoHandler = (event) => {
@@ -75,10 +75,10 @@ return (
         <h2 class="form-head">Login Form</h2>
         <label for="email" class="label-inp">Email address*</label>
         <input type="text" class="email-id-input input" id="email" value={user.email}
-          placeholder="adarshbalika@gmail.com" onChange={newInfoHandler} required />
+          placeholder="billiejean2011@gmail.com" onChange={newInfoHandler} required />
 
         <label for="password" class="label-inp">Password*</label>
-        <input type="password" class="input" id="password" placeholder="***" value={user.password}
+        <input type="password" class="input" id="password" placeholder="**************" value={user.password}
           onChange={newInfoHandler} required />
 
         <div class="pass-rem">
