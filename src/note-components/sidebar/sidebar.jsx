@@ -22,7 +22,7 @@ return(
         <li className="left-item"><span><i class="fal fa-home ic"></i></span> Home</li>
         </NavLink>
         <NavLink to="/label" className="link-style link-color-primary" style={activeLink}>
-        <li className="left-item"><span><i class="fal fa-tag ic"></i> </span> Lable</li>
+        <li className="left-item"><span><i class="fal fa-tag ic"></i> </span> Tags</li>
         </NavLink>
         <NavLink to="/archive" className="link-style link-color-primary" style={activeLink}>
         <li className="left-item"><span><i class="fal fa-archive ic"></i></span> Archive</li>
@@ -30,8 +30,9 @@ return(
         <NavLink to="/trash" className="link-style link-color-primary" style={activeLink}>
         <li className="left-item"><span><i class="fal fa-trash ic"></i></span> Trash</li>
         </NavLink>
-        <button className="btn">
-        <li onClick={logoutHandler}>Logout</li></button>
+        <NavLink to="/" className="link-style link-color-primary" style={activeLink}>
+        <li className="left-item" onClick={logoutHandler}><span><i class="fal fa-sign-out ic"></i></span> Logout</li>
+        </NavLink>
     </ul>
 </div>
 );
