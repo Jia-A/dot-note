@@ -12,7 +12,8 @@ const Trash = () =>{
             <div className="main-container">
                 <Sidebar/>
                 <div className="right-cont">
-                <h2 className="page-head">Trash Notes</h2>
+                    {trash.length === 0 ? <h2 className="page-head">Trash is empty!</h2> : <h2 className="page-head">Trash Notes</h2>}
+                
                     {trash.map((item) => (
                     <div className="note-list">
                         <div className="note-list-head">
@@ -29,7 +30,6 @@ const Trash = () =>{
                         <div className="note-foot">
                         <small className="date-time">{item.currentDate}</small>
                             <div className="foot-icons">
-                                <span><i class="fad fa-inbox-in note-list-icon"></i></span>
                                 <span onClick={(e)=>noteDispatch({type : "DELETE_FROM_TRASH", payload : item._id})}><i class="fad fa-trash note-list-icon"></i></span>
                             </div>
                         </div>

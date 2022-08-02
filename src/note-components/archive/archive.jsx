@@ -56,8 +56,10 @@ return (
     <div className="main-container">
         <Sidebar />
         <div className="right-cont">
-            <h2 className="page-head">Archived Notes</h2>
-            {archive.map((item) => (
+            
+            {archive.length === 0 ? <h2 className="page-head">Archive is empty!</h2> : <h2 className="page-head">Archived Notes</h2> }
+            {
+            archive.map((item) => (
             <div className="note-list">
                 <div className="note-list-head">
                     <h3 className="note-list-title">{item.title}</h3>

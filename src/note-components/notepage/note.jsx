@@ -28,6 +28,7 @@ const [ newNote, setNewNote ] =  useState({ title: "", mainContent: "", backColo
 const editHandler = (editedNote) =>{
     setAddModal(true)
     setCurrentNote(editedNote);
+    setNewNote(editedNote);
 }
 
 
@@ -37,7 +38,7 @@ const customStyle = {
     },
     content: {
       width: "18rem",
-      minHeight: "15rem",
+      height: "24rem",
       margin: "4rem auto",
       backgroundColor: "#1D3461",
       color : "#a0b2b9",
@@ -51,10 +52,11 @@ const customStyle = {
 const noteCreateFuntion = async (e) => {
 e.preventDefault();
 if (token) {
+    if(notes.title !=="" && notes.mainContent !=="") {
 noteCreate(notes, token, noteDispatch);
-console.log(notes.backColor)
 setNote({ title: "", mainContent: "", backColor : "", tagName:"", priorityLevel : "", currentDate : ""});
-
+    } 
+    else { toast.error("Please enter title and description!") }
 } else {
 navigate("/login")
 }
