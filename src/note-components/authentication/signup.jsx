@@ -57,7 +57,7 @@ throw new Error("Something went wrong! Please try again later");
   toast.error("Signup failed.")
 console.log(error);
 }
-} else alert("Enter all the fields");
+} else toast.error("Enter all the fields");
 };
 
 return (
@@ -72,7 +72,7 @@ return (
 </nav>
   <main class="form-main align-justify-center margin-30">
     <div class="form-container align-justify-center">
-      <form action="" class="signup-form">
+      <form action="" class="signup-form" onSubmit={signupHandler}>
         <h2 class="form-head">SignUp Form</h2>
         <label for="fname" class="label-inp">Firstname*</label>
         <input type="text" class="input" id="fname" placeholder="Billie" value={user.fname}
@@ -81,17 +81,17 @@ return (
         <input type="text" class="input" id="lname" placeholder="Jean" value={user.lname}
           onChange={newUserInfoHandler} />
         <label for="email" class="label-inp">Email address*</label>
-        <input type="text" class="email-id-input input" id="email" placeholder="billiejean123@gmail.com"
+        <input type="email" class="email-id-input input" id="email" placeholder="billiejean123@gmail.com"
           value={user.email} onChange={newUserInfoHandler} required />
         <label for="password" class="label-inp">Password*</label>
         <input type="password" class="input" id="password" placeholder="***" value={user.password}
           onChange={newUserInfoHandler} required />
-        <label for="">
+        <label for="terms" className="terms">
           <input type="checkbox" id="t-c" required />
           I accept all the terms and conditions.
         </label>
         <div>
-          <button class="submit-btn btn primary-btn" onClick={signupHandler}>Signup</button>
+          <button class="submit-btn btn primary-btn" type="submit">Signup</button>
         </div>
         <Link to="/login" className="link-style link-color-primary">
         <button class="new-ac button read-btn"> Already have an account</button>

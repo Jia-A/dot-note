@@ -71,28 +71,28 @@ return (
 </nav>
   <main class="form-main align-justify-center margin-30">
     <div class="form-container align-justify-center">
-      <form action="" class="login-form">
+      <form action="" class="login-form" onSubmit={loginHandler}>
         <h2 class="form-head">Login Form</h2>
         <label for="email" class="label-inp">Email address*</label>
-        <input type="text" class="email-id-input input" id="email" value={user.email}
+        <input type="email" class="email-id-input input" id="email" value={user.email}
           placeholder="billiejean2011@gmail.com" onChange={newInfoHandler} required />
 
         <label for="password" class="label-inp">Password*</label>
         <input type="password" class="input" id="password" placeholder="**************" value={user.password}
           onChange={newInfoHandler} required />
 
-        <div class="pass-rem">
+        {/* <div class="pass-rem">
           <label for="">
-            <input type="checkbox" id="remem-me" />
+            <input type="checkbox" id="remem-me" required/>
             Remember me
           </label>
           <button class="new-ac">Forgot your password?</button>
+        </div> */}
+        <div className="login-btns">
+          <button class="submit-btn btn primary-btn" onClick={guestUserHandler}>Guest Credentials</button>
         </div>
         <div>
-          <button class="submit-btn btn primary-btn" onClick={guestUserHandler}>Guest</button>
-        </div>
-        <div>
-          <button class="submit-btn btn primary-btn" onClick={loginHandler}>Login</button>
+          <button class="submit-btn btn primary-btn" type="submit">Login</button>
         </div>
         <Link to="/signup" className="link-style link-color-primary">
         <button class="new-ac"> Create new account </button>
