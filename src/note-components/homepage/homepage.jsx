@@ -1,9 +1,12 @@
 import "./homepage.css";
 import { Link } from "react-router-dom";
 import { useTheme } from "../../Context/theme-context";
+import { useAuth } from "../../Context/authorization-context";
 
 const Homepage = () =>{
     const { theme, setTheme } = useTheme();
+    const { authState } = useAuth();
+    const { token } = authState;
 return(
 <div className="App">
 <nav className="main-nav">
@@ -29,12 +32,20 @@ return(
                         className="br-name">Dot Note</span> for efficiency and give a better structure to your day...
                 </p>
                 <div className="btn-div">
-                    <Link to="/signup">
+                    { token ?  (
+                            <Link to="/notes">
+                            <button className="btn primary-btn">Go to notes</button>
+                            </Link>
+                    ) : (
+                        <div className="btn-div">
+                            <Link to="/signup">
                     <button className="btn primary-btn">Join Now</button>
                     </Link>
                     <Link to="/login">
                     <button className="new-btn read-btn">Already have an account?</button>
                     </Link>
+                        </div>
+                    )}
                 </div>
             </section>
         </div>
