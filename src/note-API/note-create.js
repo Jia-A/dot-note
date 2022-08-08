@@ -14,7 +14,7 @@ const noteCreate = async (note, token, noteDispatch) => {
         );
 
         if (result.status === 200 || result.status === 201) {
-            localStorage.setItem("note", result.data.notes);
+            localStorage.setItem("note", JSON.stringify(result.data.notes));
             noteDispatch({
                 type: "ADD_NOTE",
                 payload: result.data.notes

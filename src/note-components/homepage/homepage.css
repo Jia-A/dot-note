@@ -45,12 +45,13 @@ body {
 .read-btn {
     background-color: transparent;
     cursor: pointer;
+    color: var(--secondary-color);
 }
 
 .read-btn:hover {
     background-color: transparent;
     text-decoration: 1px solid var(--secondary-color) underline;
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .home-brand {

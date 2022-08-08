@@ -29,7 +29,7 @@ return (
         <div className="right-cont">
             <div className="main-chip-cont">
                 <div className="chips-container marginned">
-                    <h5>Labels on Notes</h5>
+                    <h5>Add a new tag</h5>
                     <ul className="margin">
                         { tag.map((item, index)=>(
                         <li class="list-item">{item}<span class="icon-cross"

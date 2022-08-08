@@ -14,7 +14,7 @@ return (
     <label htmlFor="" className="sort-label">Sort by Tags</label>
     {tag.map((item)=> (
     <label>
-        <input className="fil-inp" type="radio" name="tag" value={item} onClick={(e)=>filterDispatch({type : "TAGS",
+        <input className="fil-inp" type="radio" name="tag" checked={filterState.filterByTags=== item} value={item} onClick={(e)=>filterDispatch({type : "TAGS",
         payload : e.target.value})}/>{item} </label>
 
     ))}
@@ -22,7 +22,7 @@ return (
     <label htmlFor="" className="sort-label">Sort by Priority</label>
     {priority.map((item)=> (
     <label>
-        <input className="fil-inp" type="radio" value={item} name="priority" onClick={(e)=>filterDispatch({type :
+        <input className="fil-inp" type="radio" checked={filterState.filterByPriority=== item} value={item} name="priority" onClick={(e)=>filterDispatch({type :
         "PRIORITY", payload : e.target.value})}/>{item} </label>
 
     ))}

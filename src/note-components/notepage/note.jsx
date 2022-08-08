@@ -148,7 +148,10 @@ return(
                     </div>
                 </div>
             </div>
-            {filteredNotes(note, filterState).map((item)=> (
+            { 
+            filteredNotes(note, filterState).length === 0 ? ( <h2 className="no-notes">No notes available</h2> ) :
+
+            filteredNotes(note, filterState).map((item)=> (
             <div className="note-list" style={{backgroundColor : item.backColor}}>
                 <div className="note-list-head">
                     <h3 className="note-list-title">{item.title}</h3>
